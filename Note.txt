@@ -1,0 +1,1228 @@
+               -----------------------------------  
+                HTML (Hyper Text Markup Language)
+               -----------------------------------
+HyperText - Hyper Links / Text Links which will leads to next documents.
+Markup - tags which defines structure of page.
+
+Heading tags - <h1></h1> - <h6></h6>
+Paragraph tag - <p></p>
+abbreviation or acronym - <abbr></abbr>
+address - <address></address>
+    note: The <address> element can only be used to represent the contact information
+bold - <b>---</b>
+italic - <i></i>
+underline - <u>--</u>
+subscript - <sub>---</sub> (displayed below baseline)
+superscript - <sup>--</sup> (displayed little bit upper from baseline)
+pre tag - <pre>---</pre> (all things will be displayed as it is written inside pre element)
+
+Semantic tags and structure
+---------------------------
+By using semantic tags the code is more readable and also benificial for screen readers(accessibility).
+
+These all are Semantic tags:
+article,aside,details,figcaption,figure,footer,form,header,main,mark,nav,table,section
+
+<header>---</header> - contains navbar
+<main> - contains main sections
+    <section>---</section> - a page section
+    <article>---</article> - a self contained content
+    <aside>---</aside> - content aside from the content (eg:sidebar,Ads etc)
+</main>
+<footer>---</footer> - contains contact details place copy rights etc...
+
+Self Closing Tags/ Void Elements
+--------------------------------
+Horizontal rule - <hr/>
+Line Break - <br/>
+image tag - <img src="" alt=""/>
+
+Anchor Element
+--------------
+<a href="link">Click here<a/>
+
+Note: use target = "_blank" attribute to open in new page by default it set to redirect in same page. 
+
+Image Element
+-------------
+<img src="url/size" alt="alternative text"/> (self Closing tag)
+
+Audio,Video & iframe
+--------------------
+Video - <video controls loop autoplay muted>
+            <source src= "path" type = "video/mp4">
+        </video>
+
+Audio - <audio controls>
+            <source src="path" type="audio/mp3">
+        </audio>
+
+iframe - <iframe src="path">
+
+note: used to show other webpage content in a frame in our webpage.
+
+List Elements
+-------------
+1) unordered List
+   ---------------
+   <ul>
+       <li>Orange</li>
+       <li>Apple</li>
+       <li>Mango</li>
+    </ul>
+
+2) Ordered List
+   ------------
+   <ol>
+       <li>Kawasaki</li>
+       <li>Triumph</li>
+       <li>Honda</li>
+    </ol>
+
+Table
+------
+<table border="1px">
+    <thead>
+        <tr>
+            <th>sl no</th>
+            <th>Items</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Apple</td>
+            <td>Rs 180</td>
+        </tr>
+    </tbody>    
+</table>
+
+Note: colspan & rowspan - This attribute is used to create cell spanning mutiple columns/rows.
+        eg: <th colspan="3">Details</th>
+
+Forms
+------
+label - <label></label>
+
+input fields - <input type = "text/number/tel/email/radio/checkbox/submit">
+
+note: for radio a attribute called name is used to restrict users from selecting both.
+
+text area element - <textarea row="" cols=""></textarea>
+
+dropdown - <select>
+                <option></option>
+           </select>
+
+File Paths
+----------
+2 types - Absolute & Relative 
+
+Absolute - full file path starting from c.
+Relative - file path from the index file or root file.
+ 
+double dot - points to one level upper directory
+single dot - points to same directory
+
+Content Division element
+------------------------
+<div>---</div> - this tag is used as a container for elements.its a block level element which means it takes full width
+
+span tag
+---------
+<span>---</span> - This tag is an inline container used to mark up a part of a text, or a part of a document.This tag is 
+                   much like the <div> element, but <div> is a block-level element and <span> is an inline element.
+                   This can be easily styled by CSS or manipulated with JavaScript using the class or id attribute.
+
+detail and summary
+------------------
+<details>
+    <summary>div will open when you clicked this</summary>
+    <div>This will be showned</div>
+</details>
+
+Note: this is used for accordion like things. It has open attribute by default it is closed when clicked it will open.
+
+
+
+
+
+          ------------------------------
+            CSS (Cascading Style Sheet)
+          ------------------------------
+
+Used for styling the webpage.
+
+Cascading - step by step like waterfalls.
+
+CSS Rule structure
+------------------
+*A CSS rule consists of Selectors and a Declaration block.
+*Declaration are used to define the style properties for the selected elements.
+*Each Declaration is consist of Properties and Values.
+
+Units in CSS
+------------
+*Absolute Lengths - The absolute Length units are fixed and a length expressed in any of these will appear as exactly that size.
+
+1)pixels(px) : representing the smallest units of screen space.
+2)inches(in) :
+3)points(pt) :
+
+*Relative Lengths - Relative length units specify a length related to another length property.Relative length units scale better
+                    between different rendering medium.
+
+1)em : calculated based on the font size of the parent element.
+2)rem (root em) : based on the font size of the root(html) element.
+3)percentage(%) : Percentages are relative units based on the parent element's size or the containing block.
+
+How to Add CSS to HTML
+----------------------
+1)inline - <tag style="property:value;"></tag>
+2)internal - <head><style>tag{property:value;}</style></head>
+3)external - <head><link href="path" rel="stylesheet"></head> --->path---> h1{property:value;}
+
+CSS Comments
+------------
+/*This is a commented part*/ - This part is not going to executed/displayed.
+
+Note: single line and multi-line both have same syntax.
+
+CSS Selectors
+-------------
+1)Tag Selector - <p>This is a Paragraph</p> ----> p{color:grey;}
+2)Class Selector (can be use multiple element with same class name) - <h1 class="heading">Class</h1> ----> .heading{background-color:yellow;}
+3)Id Selector (unique) - <h2 id="demo">id Selector</h2> -----> #demo{property:value;}
+4)Attribute Selector - <li class="note" value="4">Attribute selectors</li> ----> li[value="4"] {property:value;}
+5)Grouping Selector - h1,p,li {property:value;}
+6)Universal Selector (select all) - *{property:value;}
+7)pseudo-class selectors
+8)pseudo-element selectors
+
+Specificity and Inheritance
+----------------------------
+CSS will apply in this odder while executing:
+
+3.External --->2. Internal --->1. Inline
+
+Position ---> Specificity(1.id, 2.attribute, 3.class, 4.element) ---> Type(1.Inline, 2.Internal, 3.External) ---> Importance(!important)
+            
+            eg: color: blue !important;
+
+
+Color Properties
+----------------
+1) color : named/hex value/rgb/RGBA (A=alpha channel/opacity/density of color)/hsl(hue - pure color,saturation - vivid,rich,intense & 
+           lightness)/transparent/currentcolor (set same color of parent);
+2) background-color : named/hex value/rgb/rgba/hsl;  
+
+Note: colorhunt (colour palete picker)
+
+Background Properties
+---------------------
+1)background-image:url('');
+2)background-repeat: repeat-x (repeat in horizontal direction),repeat-y (repeat in vertical direction) ,no-repeat;
+3)background-size: cover (fits and no empty space remains),contain (fits and image is fully visible),auto (display in original size).
+4)background-position: left/top/etc; (sets the starting position of background image)
+5)background-attachment: fixed; (sets whether a background image scrolls with the rest of the page, or is fixed.By default set to scroll).
+                         eg: used in parallax effect.
+6)background-blend-mode: This is CSS3 intoduced property
+
+shorthand - background: color url("") background-repeat background-size background-attachment background-position;
+            eg: background:red url("img.png") no-repeat contain fixed right-top;
+
+
+Font properties
+---------------
+1)font-size: px/pt/em/rem/named;
+
+Note: 1px = (1/96th inch) = 0.26mm (h&w)
+      1pt = (1/72nd inch) = 0.35mm
+      1em = 100% of parent (Relative size)
+      1rem = 100% of root (Relative size to root which means html element)
+      named = xx-large 
+
+2)font-weight: keyword/Relative/Number;
+
+Note: keyword - normal,bold
+      Relative to Parent - lighter,bolder
+      Number - 100-900
+
+3) font-family: typeface,generic font type;
+
+Note: If space in between typeface name then use "" eg: "New York Times"
+
+Note: fallback fonts - This is a alternative font which is given on font-family apart from the intented font.This is used because
+                       in case the intented font will not work in that particular browser the alternative will be used.
+
+                       eg: font-family: "preferred font",fallback1,fallback2,sansarif;  
+
+4) font-style : normal/italic/oblique etc;
+
+5) font-variant : small-caps; - control the appearance of text character
+
+Text Properties
+---------------
+1) text-align: left/center/right/start/end/justify; - This will align text like filling gap from end to end.
+
+2) text-decoration:none,overline,line-through,underline;
+
+Note: text-decoration contains many properties.
+        1)text-decoration-line:overline/underline;
+        2)text-decoration-color:red;
+        3)text-decoration-style:solid/dotted/double/dashed/wavy;
+        4)text-decoration-thickness:10px;
+
+3) text-transform: uppercase/lowercase/capitalize; 
+
+4) text-spacing :
+
+Note: text-spacing contains many properties.
+        1)letter-spacing: 1px;
+        2)word-spacing: 1px;
+        3)line-height:1.5
+        4)white-space:wrap/nowrap;
+
+5) text-shadow : 2px 2px 1px blue;
+                offset-x offset-y blur-radius color;
+
+Note: negative value is used to set offset backward and upper.
+
+Column Layout in CSS
+--------------------
+1) column-count: 3; - This will split the paragraph into 3 columns if you applied to a p.
+
+2) column-rule: 1px solid grey; - This property will give a line rule 
+
+Note: This is shorthand property of: column-rule-color:,column-rule-style:solid/dotted etc.. & column-rule-width:
+
+3) column-gap: 50px; - This will create a gap between content and rule.
+
+4) column-fill: auto/balance(default); - If you add a height to a multi-column element, you can control how the content fills the columns.
+
+Accent Color in CSS
+-------------------
+The accent-color property specifies the accent color for user-interface controls like: <input type="checkbox">, <input type="radio">,
+<input type="range"> and <progress>.By using this property we can change the inside color of boxes in checkbox,radiobox,range and
+progress.
+
+Example:
+
+input[type='checkbox']{
+    accent-color: green;
+    width:30px;
+    aspect-ratio:1;
+}
+
+List Properties
+---------------
+1)List-style-type:disc/armanium/lower-roman/decimal etc..
+2)List-style-image:url()
+3)List-style-position:inside/outside; by default its outside
+4)List-style-property (shorthand)
+
+Anchor States Styling in CSS
+----------------------------
+1) a:link - This is the default state for an unvisited link.
+2) a:visited - This state applies to link that the user already visited.
+3) a:hover - This state triggers when the user hovers their mouse pointer over a link.
+4) a:active - This state is triggered when the user clicks on a link.
+
+Note: LVHA Acronym to remember the order of link states.
+
+Box Model
+----------
+1)height: px/%;
+
+2)width: px/%;
+
+3)border: px solid/dashed color-name; && border-top: px; && border-width: 0px(T) 2px(R) 4px(B) 3px(L); / border-width: 2px(T&B) 4px(L&R);  
+shordhand of: border-width,border-style and border-color.
+
+border-radius: 5px;
+
+Note: box height & width doesn't change.
+
+Note: If you want to add same color to left,right and top, bottom then you can use this new feature called border-inline and broder-block
+        then you can reduce number of lines of code. instead of using border-right,border-left,border-top & border-bottom.
+
+4)padding: 20px;
+Note: push box outside. padding apply b/w element and border. -ve padding is not a standard property,padding is always +ve.
+
+5)margin: 12px; - margin is apply outside border. 
+
+Note: collapsing margin : When two adjacent margins meet, they can collapse into a single margin.This behavior is important to understand
+                          especially when dealing with elements like paragraph and headings.The larger of the two margins takes precedence.
+
+      -ve margins will ovelaps elements.
+
+      To center element horizontally using margin by using margin:auto; margin: 0 auto; - center horizontally 
+
+6)box-sizing: content-box(default)/border-box
+
+Note: In content-box - element width & height =  content height and width + padding + border + margin
+      In border-box - element width & height = margin,border,padding included within content height and width 
+
+box-sizing is a property that controls how the total width and height of an element are calculated,including its content,padding, and 
+border. It has 2 values content-box and border-box.
+
+The box-sizing property allows us to include the padding and border in an element's total width and height.
+If you set box-sizing: border-box; on an element, padding and border are included in the width and height
+
+7) box-shadow: 0px 0px 60px 60px gold;
+            {horizontal offset  vertical offset blur spread color;} 
+
+8) filter:drop-shadow(0 0 10px #fff);
+
+Note: box-shadow will set shadow as a box but drop-shadow will set shadow in correct border like for images cutting edge shadow provided.
+
+9) aspect-ratio: 1; - If you set this property instead of height then this will set height automatically corresponding to width that you
+                      set. You can set different aspect-ratios that you need.
+
+Linear Gradient
+---------------
+linear-gradient() CSS function creates an image consisting of a progressive transition between two or more colors along a straight line.
+1) default(top to bottom) - background-image: linear-gradient(blue,yellow);
+2) direction - background-image:linear-gradient(to left/to right/to top,blue,yellow);
+3) angle - background-image:linear-gradient(90deg,blue,yellow);
+4) cornor to cornor - background-image:linear-gradient(to top left/ to top right/ to bottom right/ to bottom left,blue,yellow);
+5) repeating linear gradient - background-image:repeating-linear-gradient(45deg,blue,green,50px); 
+
+Note: to get transparent gradient use rgba - background-image:linear-gradient(to right top,rgba(234,0,0,0.5),(234,0,0,0.5)),url("./image
+.png");
+
+Radial Gradient
+---------------
+same like linear gradient but this is used for shape, linear is used in one direction starts from one side to other while 
+
+A radial gradient is defined by its center.
+
+1) radial gradient - background-image:radial-gradient(red,yellow);
+2) gradient with shape - background-image:radial-gradient(circle/ellipse,red,yellow);
+3) repeating radial gradient - background-image:linear-radial-gradient(yellow,green,blue,50px);
+
+Filter in CSS {filter:property()}
+-------------
+1) greyscale() - converts elements to grey shade.
+2) opacity(0.5) - Adjust the opacity (transparency) of the element. Value range from 0 (completely transparent) to 1(completely opaque).
+3) blur(5px) - applies a blur effect to the element.The value in px determines the amount of blur.
+4) contrast(1.1) - adjust contrast of element similar to brightness value greater than 1 will increase contrast and decrease if less than 1.
+5) brightness(40%) - adjust brightness of the element. Value determined using percentage. Default value is 100%.over brightness > 100%
+6) invert() - inverts the color of the element.
+7) saturate(1.2) - increase and decrease saturation of element.value greater than 1 increase saturation and decrease if goes down than 1.
+8) hue-rotate(90deg) - rotate the hue of the element. Value is in degrees.
+9) sepia(0.7): Applies a sepia tone effect to the element. A value of 1 (or 100%) is full sepia.
+etc...
+
+Note: we can use complex filters for single element eg- filter:blue(3px) greyscale(0.5) contrast(1.2); 
+
+
+Combining CSS Selector (selector can be tag,class,id whatever)
+----------------------
+eg: .inner-box p{ color: green}
+
+1) Group Selector (apply to all selector) - selector,selector{property: value};
+
+2) Child Selector (only one level nested - direct child) - selector > selector {property: value};
+
+3) Descendent selector (can be applied to grandchild) - selector selector {property: value};
+
+4) Chainging Selector (1 element then id or clas) - selectorselector {property: value};
+
+5) Combining Selector (combines different combinations) - selector selectorselector {property: value};
+
+6) General sibling selector (~) - Selects all elements that are siblings of selected element and share the same parent.
+
+7) Adjacent Sibling Selector(+) - selects an element that is immediately precedance from selected element.
+
+8) Universal Selector - Used to select all elements.
+
+CSS Positioning
+----------------
+1) Static Position (HTML default flow/Positioning - applied default)
+
+2) Relative Position (position relative to default position) - position: relative;
+                                                                top:50px;
+                                                                left:30px;
+                                            
+3) Absolute Position (position relative to nearest positioned ancestor or top left corner of webpage) - position: absolute;
+                                                                                                        top: 50px;
+                                                                                                        left: 50px;
+
+Note: postition property must be set to relative for ancestor otherwise it relative to top left corner of webpage.
+
+      To get precise center use transform:translate(-50%,-50%);
+
+Z-index (used to set element behind or infront of any other element - use -1 to set behind) - z-index: 100; 
+
+Note: Higher z-index will be infront always. eg- z-index: 50, z-index: 100; z-index with value 100 will be infront of 50.
+
+4) Fixed Postition (position relative to top left corner of browser window/ fixed) -  postition:fixed;
+                                                                                        top:5px;
+
+5) sticky - stick to the position mentioned like top: 0 etc;
+
+
+CSS Display
+------------
+1) display: inline; - goes in a line until the display size fill. we cannot set height and width, default to the size of the content.
+                      height,width,top & bottom of margin and padding are not going to work in inline. 
+2) display: block; - full width. we can set height and width.
+3) display: inline-block - goes in a line and  we can set their height and width.can determine layout
+4) display: none; - disappier element from the display.
+
+CSS Float
+----------
+float: left/right - wrap the content (block) by the content laying under the float content.
+
+clear: left/right/both - apply to the element that we want to exclude from the floating property.This element will goes to default postition. 
+
+Note: Not used to layout in modern days for that we have flexbox and grids. use only to wrap the image with paragraph.
+
+Overflow in CSS eg: .container {overflow:hidden;}
+------------------------------------------------
+1) overflow: visible;(default) - This is default behavior where content can overflow its container without any clipping. Use it when you
+                                 want content to extend beyond its container's boundaries.
+
+2) overflow: hidden; - content that overflows from container where hidden and not visible. Useful when you want to hide extra content that
+                       doesn't fit within a fixed-size container.
+
+3) overflow: scroll; - scrollbars(both horizontal and vertical) are added to the container, allowing users to scroll through hidden content.
+                        Use it when you want to display all content and provide a scrolling mechanism.
+
+4) overflow: auto; - scrollbars are only added if content overflows.Its a combination of visible(no scrollbars if content fits) and scrolls
+                     (scrollbars when content overflows). Ideal for creating scrollable containers only when needed.
+
+Whitespace in CSS
+------------------
+white-space:nowrap / wrap(default) - This will transform your content/element to align horizontally in one line.Thats how hrizontal 
+                                     scrollbar will be displayed.
+
+How to Create Resposive  Websites
+---------------------------------
+
+4 ways :
+1)Media Queries
+2)flexbox (1D)
+3)grids (2D)
+4)external framework eg: bootstrap (bulid in top of flexbox),tailwind etc..
+
+Media Queries
+--------------
+@media (min-width/max-width: size){
+    styles
+}
+
+Comibined : 
+
+@media (min-width: size) and (max-width: size) {
+    style
+}
+
+size - 1) max-width : applied if size = or < than mentioned size
+       2) min-width : applied if size = or > than to mentioned size
+
+flexbox
+---------
+display flex is applied to the container that you want to layout.
+eg: <div class="container"></div>
+
+style:-
+display: flex/inline-flex;
+gap: 10px
+
+Note: By default it goes like inline but we can change direction using flex direction.
+
+1) Flex direction (parent property)
+-----------------------------------
+flex-direction: row/column/row-reverse/column-reverse;
+
+Flexbox is (aside from optional wrapping) a single-direction layout concept.
+Think of flex items as primarily laying out either in horizontal rows or vertical columns.
+
+row: aligned horizontally in main-axis until the screen space end. Cross-axis(vertical)
+column: align vertically opposite to the cross-axis(horizontal) from top to bottom.
+
+2) flex basis (flexing along the main-axis) (child property)
+--------------------------------------------
+flex-basis: 100px;
+
+height for column and width for row.
+
+Note: This is applied to childs not to the container.Defualt set to auto.
+
+3) Order (child property)
+-------------------------
+order: 3;
+By default, flex items are laid out in the source order. The order property controls
+the order in which they appear in the flex container.Items with the same order revert
+ to source order.
+
+Note: applied to childs, by default all are set to 0 they are arranged in executing order.
+
+4)flex wrap (parent property)
+-----------------------------
+flex-wrap: nowrap/wrap/wrap-reverse;
+
+This will set the elements downwards which doesnot can occupy in screen full width.
+But default it set to nowrap.so that all elements try to fit on one line.
+
+wrap-reverse: bottom right corner to top left corner instead of top left to bottom right.
+
+5) justify-content (parent property)
+------------------------------------
+distribution of items inside the container in main-axis. It helps distribute extra free 
+space leftover when either all the flex items on a line are inflexible, or are flexible
+but have reached their maximum size.
+
+justify-content: flex-start;
+
+flex-start: bunched up to the left of container.
+flex-end: bunched up to the end of container.
+center: all are aligned to center.
+space-between:first and last elemet stuck to the left and right end & equal space between elements.
+space-evenly: Equal space between elements including starting and ending.
+space-around:the inner items will have equal spacing in between each other and half space in starting and ending
+
+Note: if elements are occupied in full space then this property is not going to work.
+
+6) align-items (parent property)
+--------------------------------
+distribution of items along cross-axis. cross-axis version of justify-content.
+
+Note: you have to set height
+
+align-items: flex-start/center/flex-end/stretch(default)/baseline;
+height: 70vh;
+
+align-self: flex-start/center/flex-end; (child property)
+
+This is used to give a separate align to the single one from align-items property of container.
+
+7) align-content ()
+-------------------
+similer to align-items but it only works if flex-wrap is set to wrap or wrap-reverse. This property only takes
+effect on multi-line flexible containers.
+
+flex-wrap: wrap;
+align-content: center/flex-start/flex-end/space-between/space-around/space-evenly/stretch/baseline;
+height: 60vh;
+
+stretch - stretch to the remaining space.
+
+8) flex-flow (flex-direction + flex-wrap)
+------------------------------------------
+flex-flow: column wrap;
+
+By default it set to row nowrap.
+
+9) gap,row-gap,column-gap
+--------------------------
+
+we can set gap between childs in the container using gap properties. It applies that spacing only 
+between items not on the outer edges.
+
+gap: 10px; / gap: 10px 13px; (row-gap column-gap)
+or
+row-gap:20px; 
+or
+column-gap: 15px;
+
+Note: It is not exclusively for flexbox, gap works in grid and multi-column layout as well.
+
+10) flex-grow (child property)
+-------------------------------
+This defines the ability for a flex item to grow if necessary.It dictates what amount of the available
+space inside the flex container the item should take up.
+
+If all items have flex-grow set to 1, the remaining space in the container will be distributed equally
+to all children. If one of the children has a value of 2, that child would take up twice as much of the
+space as either one of the others.
+
+flex-grow: 3;
+
+Note: By default it set to 0 & negative number are invalid.
+
+11) flex-shrink
+----------------
+This defines the ability for a flex item to shrink if necessary.
+
+flex-shrink: 3;
+
+Note: Default set to 1. -ve number are invalid.
+
+12) flex
+---------
+This is the shorthand for flex-grow, flex-shrink and flex-basis combined. The second and third
+parameters (flex-shrink and flex-basis) are optional. The default is 0 1 auto, but if you set it
+with a single number value, like flex: 5;, that changes the flex-basis to 0%, so it’s like setting
+flex-grow: 5; flex-shrink: 1; flex-basis: 0%; .
+
+-------------------------------------------------------------------------------
+Note : Note that float, clear and vertical-align have no effect on a flex item.
+-------------------------------------------------------------------------------
+
+
+CSS Grid (A Two-Dimensional Layout System)
+-------------------------------
+
+flexbox: used to align content in a single dimension wheather in row or column
+grid: used to align in two dimensional grid in x and y direction like a table structure
+
+grid will align all elements propotionally but its very hard to find in flexbox.  
+
+Note: use Combination of flexbox + grid along bootstrap to get perfect layout. we use either 
+      flexbox inside grid or grid inside flexbox.
+
+
+eg:- <div class="container">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+     </div>
+
+.container{     
+display: grid;
+grid-template-colums: 1fr 2fr; (width)
+grid-template-rows: 1fr 1fr; {height}
+gap: 10px;
+}
+
+1)Grid sizing (How to size columns and rows)
+---------------------------------------------
+
+short hand of grid-template-rows & columns
+-------------------------------------------
+grid-template: 100px 300px/ 200px auto; 
+                rows            columns
+
+Note: px, rem all are fixed in size so it will not shrik or expand when you reduce the window size or expand.
+
+      auto : if we use auto then in rows it set to height of content/correct fit of content. where as for
+             columns it will set to 100% of width remaining.
+
+ratios/fractions (fr)
+---------------------
+grid-template-rows: 1fr 2fr;
+grid-template-columns: 2fr 4fr; 
+
+In this the first row will be half of the second row.
+
+MinMax size
+------------
+grid-template-rows: 200px 400px;
+grid-template-columns: 200px minmax(400px,800px);
+
+In this sizing the second column will go all the way upto 800px and all the way down to 400px horizontally(column).
+
+Repeat size
+------------
+grid-template-rows: repeat(2,200px); -  same as 200px 200px;
+grid-template-columns: repeat(2,400px); - same as 400px 400px;
+
+This will repeat the same size to 2 columns as well as rows here.
+
+grid auto 
+----------
+grid-auto-rows/columns : 300px;
+
+this is used to set the size to all the rows and columns added in future.
+
+Common terms in grid layout
+----------------------------
+grid container
+grid elements
+grid-tracks - row tracks and column tracks
+grid lines (gap)
+grid cells
+
+grid layout and sizing
+-----------------------
+grid-column: span 2 or 2/span 2; {span 2 means start were it starts and end after 2 indexes or if we want to start from
+ were we want then use second option} - in this the first element will occupy 2 grid cells horizontally.
+
+Note: this is shorthand properties of grid-column-start and grid-column-end to get the same result you have to apply
+      grid-column-start: 0/span 2 ; & grid-column-end: 2/auto;
+
+      we can also use -ve like grid-column-end: -1; which is very hand in cases like we don't know exact ending.
+
+      use developer tool to see grid indexing.
+
+grid-row : span 3 - same as columns instead here it is row. shorthand of grid-row-start and grid-row-end.
+
+shorthand of grid-column & row
+-------------------------------
+grid-area: 2 / 1 / 3 / 3;       {row-start/column-start/row-ends/column-end;} - order
+
+this is the shorthand of grid-row-start:2; / grid-column-start: 1; / grid-row-end: 3; / grid-column-end: 3; 
+
+order
+-----
+order: 1 - this is used to set order to elements in which way we want.
+
+Note: By default it set to 0 for all. so if you set order:1 for any element then that element will be displayed as last in grid.
+
+the direction will goes like left to right and top to bottom.
+
+One of the biggest difference between grid and flexbox is actually grid allows us to overlay elements on to another grid elements
+
+gaps
+----
+row-gap:20px; - This will put gap between each rows.
+column-gap:20px; - This will put gap between each columns.
+
+horizontal alignment
+--------------------
+justify-items:start/end/center/self-start/self-end/stretch;
+
+vertical alignment
+------------------
+align-items:start/end/center/self-start/self-end/stretch;
+
+Note: There is no wrap in grid so you have to use media query at the breaking point like this 
+        grid-template-colums: repeat(auto-fill, minmax(250px,1fr)); is set using media query
+        grid-template-column: repeat(3, minmax(250px,1fr)) is set in grid.
+
+        Because there is not wraping option in grid then after a certain point the element will overflow and stuck in same postion and
+        not align under by under in cointainer so we have to use media Queries like this.
+
+Pseudo Selectors
+----------------
+
+pseudo Elements
+----------------
+1)::before - if you want to add anything before content of some element then use content inside ::before selector.
+2)::after - same as before but it displayed after the selected element.
+3)::first-letter - this is used to style the first letter of selected element.
+4)::first-line - this is used to style the first-line of selected element.
+5)::selection - used to style when drag and selecting an element.
+6)::placeholder - used to change properties of placeholder in a form or place were use placeholders.
+
+etc...This are most used there are lot more exists.
+
+Note: How to add this in CSS - eg:
+
+ .content h1::before{
+    content: "You have to add content you want to displayed here/unicode if icon from fontawsome";
+    font-size: 20px;
+
+    styles..
+}
+
+Pseudo Class
+-------------
+1) :hover - used to style element when the mouse hover through the element.
+2) :first-child - selects first child element of its parent.
+3) :last-child - selects last child element of its parent.
+4) :nth-child(n) - selectors element based on their position within a parent element,where "n" is a numeric value.
+5) :first-of-type - select first element of its type within its parent element.
+6) :last-of-type -select the last of its type within its parent element.
+7) :nth-of-type(n/odd/even) - select nth element of mentioned type element.
+6) :active - this state is triggered when the user clicks on a link.
+
+Note: tricky one.
+
+New Features
+------------
+8) :is() - This selects elements that match any of the provided selectors. Its particularly useful when you want to apply the same
+           styles to multiple selectors without repeating the styles.
+
+Example-1:
+
+ul li a,
+ol li a,
+dl li a {
+    color: blue;
+}
+
+This can be return shortly using is pseudo class like:
+
+:is(ul,ol,dl) li a{
+    color:blue;
+}
+
+Example-2:
+
+.section-about .grid h1,
+.section-about .grid p,
+.section-testimonial .grid h1,
+.section-testmonial .grid p {
+    color:grey;
+}
+
+This can be written as:
+
+:is(.section-about,.section-testmonial) .grid :is(h1,p){
+    color:grey;
+}
+
+
+Note: :is() have more specificity than tag/type selector class selector.
+
+
+9) :where() - This is same like :is() but only deference is in specificity. This has 0 specificity
+              This typically used when you want to group selectors without applying specific styles.
+
+10) :has() - This selects elements that contain a specific element or set of elements that match the provided selector. 
+             It's currently not well-supported in modern browsers and may not be widely used in practice.
+
+Example:
+
+.parent:has([type="checkbox"]:checked) label{
+    color:red;
+}
+
+Here the label of checkbox in parent class will turn color to red if it selected and goes back to default color if unchecked.
+
+11) :not() - This is used to deselect from a group styling.
+
+Example:
+
+nav ul :not(li:last-child){
+    padding: 50px;
+}
+
+Transition Properties
+---------------------
+1) transition-property: color/background-color; - specifies which CSS properties should be transitioned.
+2) transition-timing-function: - specifies the timing curve used for transition.
+3) transition-duration: - specifies transition duration.
+4) transition-delay: - sets a delay before the transition starts.
+
+shorthand - transition: property | duration | timing-function | delay;
+
+Note: You can add multiple Transition properties seperated by coma in transition like this:
+            transition: property1,property2,property3|duration|function|delay;
+
+Transform Properties (we can also use values of transform directly without transform)
+-------------------------------------------------------------------------------------
+1) transform: translate()/translateX(200px)/translateY()/translateZ()/translate3d(); - set the element to x,y,or z position that you set.
+
+Note: You have to set property called perspective: value like 1000px to the element to set the translatez(200px) property.
+        otherwise it not going to work.
+
+2) transform: scale()/scalex()/etc; - this will multiple or decrease size.
+3) transform: rotate(deg)/rotateX(deg)/etc; - this will rotate to set postion.positive value - clockwise & negative value - anticlock wise.
+4) transform: skew(deg)/skewX()/etc; - this will skew the element. This is mostly used to tilt the element along x or y direction.
+
+Note: translate: 500px 0; - this will change position of element horizontally 500px.
+      translate: 0 500px; - this will chnage position of element vertically 500px.
+      translate: 500px 200px - this will change position of element diagonally to right bottom. use negative value to move top center 
+                                positions.
+    we can use all values as stand alone properties like the above translate.
+
+5) transform-origin: left/right - This property allows you to specify the point around which a transformation should occur.It determines
+                                  the origin point for transformation functions like rotate,scale,skew, and translate. Understanding how
+                                  transform-origin works is crutial for controlling the position and behaviour of transformed element.
+
+Note: We can also use mutiple properties for transfrom like: transform: translate(100) scale(1.2) rotate(45deg);
+        Then why we use it individualy because if we set any thing in x or y then it stop working thats why we use it individually.
+
+Animation properties
+---------------------
+1) animation-name: myAnimation; - This property specifies tha name of the keyframe animation you want to apply to an element. You can
+                                  give any name for your animation.
+
+2) animation-duration: 2s - set the duration of the animation in seconds(s) or milliseconds(ms).
+
+3) animation-timing-function: ease/linear/ease-in/ease-out/ease-in-out etc..  -  defines the timing function that determines the 
+                              accelaration and decelaration of the animation.
+
+4) animation-delay: 1s- specifies delay before the animation starts. It can be seconds(s) or milliseconds(ms).
+
+5) animation-iteration-duration: - sets the number of times the animation should repeat.You can use values like infinite, 3, or 
+                                   2n (for even iterations).
+6) animation-direction: normal/reverse/alternate/alternate-reverse - determines wheather the animation would run forward,backward or 
+                        alternatives between forward and backward cycle.
+
+Note: If you give alternate then the element will come back tho the same position as like it wents there.
+
+@keyframes: - This is not a property but a role used to define the animation's keyframes. keyframes specify how the element should look
+             at various point during the animation.
+
+             eg: @keyframes animation-name{
+                from / o%{
+                    translate:0%
+                }
+                to / 100%{
+                    translate:90vw; 
+                    or 
+                    translate:calc(90vw-100px); this will reduce translate end.
+                }
+             }
+
+There are total 8 animation properties.
+
+Variables in CSS
+----------------
+CSS Variables, also known as CSS custom properties, allows you to define reusable values in your CSS code. They provides more flexibility
+and maintainability for your styles.
+
+syntax: --variable_name:value;
+
+eg: --main-color: #87989;
+
+Note: First of all you have to define variable in some element after that you can use it in every where like this
+      background-color:var(--main-color);
+
+Nesting in CSS
+--------------
+The CSS nesting module defines a syntax for nesting selectors, providing the ability to nest one style rule inside another, with the 
+selector of the child rule relative to the selector of the parent rule.
+
+Example:
+
+.main-content h1{
+    styles...
+}
+
+.main-content p{
+    styles...
+}
+
+This can also be written as:
+
+.main-section{
+   & h1{
+        styles...
+
+        & ::before{
+            styles...
+        }
+    }
+
+   & p{
+        styles...
+    }
+}
+
+Note: & refers to the reference of main-section that means & = main-section.
+
+Writing Mode in CSS
+-------------------
+writing-mode: vertical-lr; - This will change the element writing vertically. Like flex-direction:column.
+
+Clip Path in CSS
+----------------
+The clip-path property creates a clipping region that sets what part of an element should be shown. Parts that are inside the region
+are shown ,while those ouside are hidden.
+
+Example:
+
+img{
+    clip-path:polygon(50%,0%,0%,100%,100%,100%);
+}
+
+Search clip path maker in browser and we can easly make the shapes that we want.
+
+Container Queries
+-----------------
+Container Queries enable us to apply styles to an element based on the size of the element's container.
+
+container-type: normal/size/inline-size; - The container-type CSS property is used to define the type of containment used in a 
+                                           container query.
+
+Example: 
+
+.container{
+    container-type: inline-size;
+    container-name: changelayout;
+}
+
+instead of @media use @container then container-name
+
+@container changelayout(width <= 600px) {
+    styles...
+}
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+                                                            BOOTSTRAP
+                                                            ---------
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+Bootstrap is a CSS framework developed Håkon Wium Lie . Bootstrap consist of pre-defined css classes.that we can use it to style easily.
+It consist of 12 column layout system bulit on top of flexbox makes easy to create Resposive websites easily. There are another famous
+CSS framework like Tailwind CSS,Foundation,Bulma,MUI etc..
+
+Pros of External frameworks
+---------------------------
+1) Easy and fast to use - There are tons of pre-bulid components we can impliment it fastly.
+2) Consistent styling - You will get Consistent styling whole ower the website.
+3) Browser compatability - They already make sure it is compatable in all browsers
+
+Cons of frameworks
+------------------
+1) Class blow - evey thing is attached to class.So lot of styling goes to actual html file.So it feels liked cluttered with classes in
+                your index file.
+2) Customisation - If you want all controls of design in your hand then framwork is not for you.It is very difficult and time consuming
+                    to customise it.
+
+When to/ When not to use framework
+----------------------------------
+If you want to build a responsive website quickly then consider a framework. 
+
+If you are planning of complex design and you want full controls over the design then its not a good idea of using external CSS framework
+use traditional grid and flexbox it that cases. 
+
+How to use Bootstrap?
+---------------------
+2 ways you can add/link Bootstrap to your Websites:
+
+1) You can install via package manager 
+
+2) We can connect Bootstrap Using External CDN link which is pasted inside <head></head> tag
+
+   If you want any functionality like dropdown menu or clickable button then we want to include bootstrap script jus below <body></body>
+   section.
+
+Note: CDN link , command to install via package manager and predefined class all are in Bootstrap website. So do check it out.
+
+Make sure that our style link is always under the bootstrap link.Then only we can over ride any of class that come from bootrap if we
+want to customise custom styles.Because the compiler exexutes from top to bottom.
+
+12 Columns layout system
+------------------------
+For this you need 3 components. 1st we need a div that has a class of container. 2nd inside that container we need another div with a 
+class name row inside the row we have our items. They are layed out  using the column system.
+
+How it looks like in code:
+<div class="container">
+    <div class="row">
+        <div class="col">Hello</div>
+    </div>
+</div>
+
+Bootstrap will try to gives every columns inside the row equal spacing and space them according to the entire width of container.
+so if you want 6 columns in a row then 2 columns will occupied for 1 columns each (2x6=12).
+
+Container styling
+-----------------
+.container  -   <576 (extra-small full width)
+.container-sm   -   <576 (extra-small full width)
+.container-md   -   >= 576 (small full width)
+.container-lg   -   >= 768 (medium full width)
+.container-xl   -   >= 992 (large full width)
+.container-xxl  -   >= 1200 (x-large full width)
+.container-fluid    -   >= 1400 (xx-large full width)
+
+Sized columns
+-------------
+col-num: This will set the columns to occupy how much columns out of 12 columns.
+eg: col-2 col-4 col-6
+
+Note: If you not given any num then by default it will distributed equal size automatically.
+
+Break Points of screens
+-----------------------
+extra small - none - < 576px
+small - sm - >= 576px
+medium - md - >= 768px
+large - lg - >= 992px
+extra large - xl - >= 1200px
+extra extra large - xxl - >=1400px
+
+so we can add break points to cols like:
+
+col-sm-2: this will have occupy 2 columns out of 12 columns and got break point of sm screen size.
+
+Multiple Break Points
+---------------------
+we can define multiple break points to give reponsiveness in each screen size
+
+eg: col-sm-12 col-md-8 col-lg-4
+
+Mix and Match
+-------------
+we can mix they way we want like
+
+first row
+col-2 , col-4, col
+
+second row
+.col-6 .col-md-4 , .col-6 .col-md-4, .col-6 .col-md-4
+
+
+Pre-build and pre-styled components
+-----------------------------------
+cards,buttons,navbar,dropdowns,carousals,headers,footer etc..
+
+refer bootstrap official site.
+
+Spacing
+-------
+Bootstrap includes a wide range of shorthand responsive margin, padding, and gap utility classes to modify an element’s appearance.
+
+Margin & Padding
+---------------- 
+Assign responsive-friendly margin or padding values to an element or a subset of its sides with shorthand classes. Includes support for
+individual properties, all properties, and vertical and horizontal properties. Classes are built from a default Sass map ranging from 
+.25rem to 3rem.
+
+Notation
+-------- 
+Spacing utilities that apply to all breakpoints, from xs to xxl, have no breakpoint abbreviation in them. This is because those classes
+are applied from min-width: 0 and up, and thus are not bound by a media query. The remaining breakpoints, however, do include a 
+breakpoint abbreviation.
+
+The classes are named using the format {property}{sides}-{size} for xs and {property}{sides}-{breakpoint}-{size} for sm, md, lg, xl, 
+and xxl.
+
+Where property is one of:
+
+m - for classes that set margin
+p - for classes that set padding
+Where sides is one of:
+
+t - for classes that set margin-top or padding-top
+b - for classes that set margin-bottom or padding-bottom
+s - (start) for classes that set margin-left or padding-left in LTR, margin-right or padding-right in RTL
+e - (end) for classes that set margin-right or padding-right in LTR, margin-left or padding-left in RTL
+x - for classes that set both *-left and *-right
+y - for classes that set both *-top and *-bottom
+blank - for classes that set a margin or padding on all 4 sides of the element
+Where size is one of:
+
+0 - for classes that eliminate the margin or padding by setting it to 0
+1 - (by default) for classes that set the margin or padding to $spacer * .25
+2 - (by default) for classes that set the margin or padding to $spacer * .5
+3 - (by default) for classes that set the margin or padding to $spacer
+4 - (by default) for classes that set the margin or padding to $spacer * 1.5
+5 - (by default) for classes that set the margin or padding to $spacer * 3
+auto - for classes that set the margin to auto
+(You can add more sizes by adding entries to the $spacers Sass map variable.)
+
+
+Dark mode 
+---------
+Bootstrap now supports color modes, starting with dark mode! With v5.3.0 you can implement your own color mode toggler and apply the 
+different color modes as you see fit. We support a light mode (default) and now dark mode. Color modes can be toggled globally on the
+<html> element, or on specific components and elements, thanks to the data-bs-theme attribute.
+
+eg: <html lang="en" data-bs-theme="dark/light">
+
+
+
+                                -------------------------------------------------------------
+                                                INTRODUCTION TO WEB DESIGN
+                                -------------------------------------------------------------
+                            
+Web Design Principles
+---------------------
+1) Color Theory : use adobe color or color hunt  to choose color palets.
+2) Typography : Choosing right fonts is a crutial part in web designing. use san-serif type as body 
+3) UI Design : hierarchy - color(used to pull attention first)
+                           Size(larger got noticed first)
+                           Layout(Practically aligned)
+                           Alignment(properely aligned gives a professionalism.Use grid lines)
+                           White Space (Looks more minimalist and elevative)
+                           Audience
+4) UX Design : 1. simplicity
+               2. Consistency
+               3. Reading Pattern (F pattern,Z pattern)
+               4. All platform Design
+
+Note: Daily UI - This will give task to design every day for 100 days.
+
